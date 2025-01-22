@@ -16,3 +16,22 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+input {
+  background-color: beige !important; 
+  /*
+  Foi necessário incluir !important para esta definição da cor de fundo se sobrepor à 
+  originalmente pré-definida (AS).
+  */
+  color: black;
+}
+
+select {
+  background-color: beige;
+  color: black;
+}
+
+textarea {
+  background-color: beige;
+  color: black;
+}
