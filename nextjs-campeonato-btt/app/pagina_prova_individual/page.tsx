@@ -1,3 +1,4 @@
+"use client";
 export default function ProvaIndividual() {
     return (
       <div>
@@ -13,9 +14,13 @@ export default function ProvaIndividual() {
             <h1 className="text-4xl font-bold">Prova de BTT Cascais</h1>
             <p className="text-xl mt-2">Cascais, Portugal</p>
             <p className="text-lg mt-1">15 de Junho de 2025</p>
-            <button className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white text-lg">
-              Inscreva-se
-            </button>
+            <button
+  onClick={() => window.location.href = "/form-participante"}
+  className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white text-lg"
+>
+  Inscreva-se
+</button>
+
           </div>
         </header>
   
