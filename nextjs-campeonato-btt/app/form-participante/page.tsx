@@ -63,6 +63,10 @@ export default function Page() {
               <input type="text" name="nome-equipa"/>
               <br />
 
+              <label htmlFor="responsavel-equipa">Responsável pela equipa</label>
+              <input type="text" name="responsavel-equipa"/>
+              <br />
+
               <label htmlFor="numero-elementos">Número de elementos da equipa</label>
               <input type="text" name="numero-elementos"/>
               <br />
