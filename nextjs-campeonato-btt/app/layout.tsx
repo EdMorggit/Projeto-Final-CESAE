@@ -1,5 +1,8 @@
 import '@/app/ui/global.css'; 
-// Importação do ficheiro global.css para que todas as páginas tenham acesso ao CSS (AS).
+// Importação do CSS global
+
+import Navbar from "@/app/components/navbar"; 
+// Importação da Navbar
 
 export default function RootLayout({
   children,
@@ -8,7 +11,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar /> {/* Navbar adicionada aqui, antes do conteúdo principal */}
+        <main className="container mx-auto px-4 py-8">{children}</main>
+      </body>
     </html>
   );
 }
+

@@ -1,33 +1,43 @@
-import AcmeLogo from '@/app/ui/acme-logo';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-
-export default function Page() {
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
-        {/* <AcmeLogo /> */}
-      </div>
-      <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
-        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
-          <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-            <strong>Welcome to Acme.</strong> This is the example for the{' '}
-            <a href="https://nextjs.org/learn/" className="text-blue-500">
-              Next.js Learn Course
-            </a>
-            , brought to you by Vercel.
-          </p>
-          <Link
-            href="/login"
-            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
-          >
-            <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
-          </Link>
+    <div>
+      {/* Hero Section com imagem de fundo */}
+      <section
+        className="relative bg-cover bg-center h-[400px] flex items-center justify-center text-white"
+        style={{ backgroundImage: 'url("/home-btt.jpg")' }}
+      >
+        <div className="bg-black bg-opacity-50 p-6 text-center rounded">
+          <h1 className="text-5xl font-bold">Bem-vindo ao Campeonato Nacional de BTT</h1>
+          <p className="text-lg mt-2">Acompanhe os eventos, regulamentos e participe das competições!</p>
         </div>
-        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
-          {/* Add Hero Images Here */}
+      </section>
+
+      {/* Destaques do campeonato */}
+      <section className="py-8">
+        <h2 className="text-3xl font-semibold text-center mb-6">Destaques</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-gray-200 p-4 text-center rounded">
+            <h3 className="text-xl font-bold">🏁 Próxima Prova</h3>
+            <p>Cascais, Portugal - 15 de Junho de 2025</p>
+          </div>
+          <div className="bg-gray-200 p-4 text-center rounded">
+            <h3 className="text-xl font-bold">📜 Regulamento Oficial</h3>
+            <p>Confira todas as regras para participação.</p>
+          </div>
+          <div className="bg-gray-200 p-4 text-center rounded">
+            <h3 className="text-xl font-bold">📝 Faça sua Inscrição</h3>
+            <p>Garanta sua vaga na próxima competição.</p>
+          </div>
         </div>
-      </div>
-    </main>
+      </section>
+
+      {/* Seção sobre o campeonato */}
+      <section className="py-8 bg-gray-100 text-center">
+        <h2 className="text-3xl font-semibold">Sobre o Campeonato</h2>
+        <p className="text-lg max-w-2xl mx-auto mt-4">
+          O Campeonato Nacional de BTT é uma competição anual que reúne ciclistas de todo o país em eventos desafiadores. Participe e teste seus limites em diferentes categorias!
+        </p>
+      </section>
+    </div>
   );
 }
