@@ -4,12 +4,12 @@ export default function ProvaIndividual() {
       <div>
         {/* Título e Localização (com imagem de fundo) */}
         <header
-          className="relative bg-cover bg-center h-64 flex flex-col items-center justify-center text-white"
-          style={{
-            backgroundImage: 'url("/btt pt.jpg")',
-            backgroundPosition: 'center', // Centraliza melhor a imagem
-          }}
-        >
+  className="relative bg-cover bg-center h-64 flex flex-col items-center justify-center text-white mt-16"
+  style={{
+    backgroundImage: 'url("/btt pt.jpg")',
+    backgroundPosition: 'center',
+  }}
+>
           <div className="bg-black bg-opacity-50 p-4 rounded text-center">
             <h1 className="text-4xl font-bold">Prova de BTT Cascais</h1>
             <p className="text-xl mt-2">Cascais, Portugal</p>
