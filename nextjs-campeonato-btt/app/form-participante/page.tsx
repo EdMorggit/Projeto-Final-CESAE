@@ -12,7 +12,6 @@ export default function Page() {
     color: 'lime',
     margin: 0,
     padding: 0,
-    
 };
 
     const[tipoParticipante, setTipoParticipante] = useState<'equipa' | 'individual'>();
@@ -83,7 +82,7 @@ export default function Page() {
               <input type="text" name="endereco-institucional"/>
               <br />
 
-              <label htmlFor="contacto">Contacto</label>
+              <label htmlFor="contacto" className="flex flex-col items-center pt-3 pb-2">Contacto</label>
               <label htmlFor="telefone">Telefone</label>
               <input type="number" name="telefone"/>
               <br />
@@ -100,79 +99,84 @@ export default function Page() {
             
             <div className="flex flex-col font-semibold text-orange-500 bg-blue-900 rounded-lg p-5 mb-10">
 
-            <label htmlFor="nome">Nome</label>
-            <input type="text" name="nome"/>
-            <br />
+              <label htmlFor="nome">Nome</label>
+              <input type="text" name="nome"/>
+              <br />
 
-            <label htmlFor="idade">Idade</label>
-            <input type="text" name="idade"/>
-            <br />
+              <label htmlFor="idade">Idade</label>
+              <input type="text" name="idade"/>
+              <br />
 
-            <label htmlFor="genero-individual">Género</label>
-            <select name="genero-individual" id="genero-individual">
-              <option value=""></option>
-              <option value="masculino">Masculino</option>
-              <option value="feminino">Feminino</option>
-            </select>
-            <br />
+              <label htmlFor="genero-individual">Género</label>
+              <select name="genero-individual" id="genero-individual">
+                <option value=""></option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+              </select>
+              <br />
 
-            <label htmlFor="morada">Morada</label>
-            <textarea name="morada" id="morada"></textarea>
-            <br />
+              <label htmlFor="morada">Morada</label>
+              <textarea name="morada" id="morada"></textarea>
+              <br />
 
-            <label htmlFor="codigo-postal">Código postal</label>
-            <input type="number" name="codigo-postal" />
+              <label htmlFor="codigo-postal">Código postal</label>
+              <input type="number" name="codigo-postal" />
+              <br />
 
-            <label htmlFor="concelho">Concelho</label>
-            <input type="text" name="concelho"/>
+              <label htmlFor="concelho">Concelho</label>
+              <input type="text" name="concelho"/>
+              <br />
 
-            <label htmlFor="data-nascimento">Data de nascimento</label>
-            <input type="date" name="data-nascimento"/>
-            <br />
+              <label htmlFor="data-nascimento">Data de nascimento</label>
+              <input type="date" name="data-nascimento"/>
+              <br />
 
-            <label htmlFor="identificacao">Documento de identificação</label>
-            <input type="number" name="identificacao"/>
-            <br />
+              <label htmlFor="identificacao">Documento de identificação</label>
+              <input type="number" name="identificacao"/>
+              <br />
 
-            <label htmlFor="contacto">Contacto</label>
-            <label htmlFor="telefone">Telefone</label>
-            <input type="text" name="telefone"/>
-            <label htmlFor="e-mail">E-mail</label>
-            <input type="text" name="e-mail"/>
+              <label htmlFor="contacto" className="flex flex-col items-center pt-3 pb-2">Contacto</label>
+              <label htmlFor="telefone">Telefone</label>
+              <input type="text" name="telefone"/>
+              <br />
+              <label htmlFor="e-mail">E-mail</label>
+              <input type="text" name="e-mail"/>
+              <br />
 
-            <p>Observações:</p>
-            <br />
-            <p>Indique se sofre de alguma das seguintes patologias</p>
-            <br />
-            <div>
-              <input type="checkbox" id="hipertensao" name="hipertensao" value="hipertensao" />
-              <label htmlFor="hipertensao">Hipertensão</label>
-            </div>
+              <p>Observações:</p>
+              <br />
+              <p>Indique se sofre de alguma das seguintes patologias</p>
+              <br />
+              <div>
+                <input type="checkbox" id="hipertensao" name="hipertensao" value="hipertensao" />
+                <label htmlFor="hipertensao">Hipertensão</label>
+              </div>
             
-            <div>
-              <input type="checkbox" id="insuficiencia-cardiaca" name="insuficiencia-cardiaca" value="insuficiencia-cardiaca" />
-              <label htmlFor="hipertensao">Insuficiência cardíaca</label>
-            </div>
+              <div>
+                <input type="checkbox" id="insuficiencia-cardiaca" name="insuficiencia-cardiaca" value="insuficiencia-cardiaca" />
+                <label htmlFor="hipertensao">Insuficiência cardíaca</label>
+              </div>
 
-            <div>
-              <input type="checkbox" id="asma" name="asma" value="asma" />
-              <label htmlFor="hipertensao">Asma</label>
-            </div>
+              <div>
+                <input type="checkbox" id="asma" name="asma" value="asma" />
+                <label htmlFor="hipertensao">Asma</label>
+              </div>
 
-            <div>
-              <input type="checkbox" id="epilepsia" name="epilepsia" value="epilepsia" />
-              <label htmlFor="hipertensao">Epilepsia</label>
-            </div>
+              <div>
+                <input type="checkbox" id="epilepsia" name="epilepsia" value="epilepsia" />
+                <label htmlFor="hipertensao">Epilepsia</label>
+              </div>
 
-            <div>
-              <input type="checkbox" id="insuficiencia-renal" name="insuficiencia-renal" value="insuficiencia-renal" />
-              <label htmlFor="hipertensao">Insuficiência renal</label>
-            </div>
+              <div>
+                <input type="checkbox" id="insuficiencia-renal" name="insuficiencia-renal" value="insuficiencia-renal" />
+                <label htmlFor="hipertensao">Insuficiência renal</label>
+              </div>
+              <br />
 
-            <p>Se sofrer de outra patologia, indique qual</p>
-            <label htmlFor="outra-patologia"></label>
-            <textarea name="outra-patologia" id="outra-patologia"></textarea>
-            <br />
+              <p>Se sofrer de outra patologia, indique qual</p>
+              <label htmlFor="outra-patologia"></label>
+              <textarea name="outra-patologia" id="outra-patologia"></textarea>
+              <br />
             </div>
           </div>
 
