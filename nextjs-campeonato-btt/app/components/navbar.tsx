@@ -15,11 +15,11 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-6">
           <li><Link href="/" className="hover:text-gray-300">Home</Link></li>
           <li><Link href="/calendario" className="hover:text-gray-300">Calendário</Link></li>
-          <li><Link href="/provas" className="hover:text-gray-300">Provas Futuras</Link></li>
+          <li><Link href="/provasfuturas" className="hover:text-gray-300">Provas Futuras</Link></li>
           <li><Link href="/regulamento" className="hover:text-gray-300">Regulamento</Link></li>
           <li><Link href="/form-participante" className="hover:text-gray-300 font-bold">📝 Inscrições</Link></li>
           <li><Link href="/sobre" className="hover:text-gray-300">Sobre</Link></li>
-          <li><Link href="/contactos" className="hover:text-gray-300">Contactos</Link></li>
+          
         </ul>
       </div>
     </nav>
