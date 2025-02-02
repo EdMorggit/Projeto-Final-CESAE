@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center px-4">
         
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold">🏆 BTT Championship</Link>
+        <Link href="/" className="text-2xl font-bold"> Campeonato Nacional de BTT-Orientação 🏆</Link>
         
         {/* Menu Principal */}
         <ul className="hidden md:flex space-x-6">
