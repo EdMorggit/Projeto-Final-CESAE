@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import { createParticipante } from '@/app/lib/actions';
 
 export default function Page() {
 { /* */}
@@ -9,8 +10,8 @@ export default function Page() {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     height: 'auto',
-    color: 'lime',
-    margin: 0,
+    color: 'beige',
+    marginTop: 50,
     padding: 0,
 };
 
@@ -35,7 +36,12 @@ export default function Page() {
           https://www.geeksforgeeks.org/how-to-align-form-elements-to-center-using-tailwind-css/ 
         */}
 
-        <form action="" method="" className="flex flex-col items-center">
+        <form action={createParticipante} className="flex flex-col items-center" onSubmit={(event) =>
+          {
+            event.preventDefault();
+            handleSubmit(event);
+          }
+        }>
 
           <h1 className="text-3xl font-black bg-blue-900 rounded-lg mt-10 mb-5">Ficha de inscrição</h1>
           
@@ -43,8 +49,8 @@ export default function Page() {
           (https://nextjs.org/learn/dashboard-app/improving-accessibility) */}
           
           <div className="text-2xl font-bold bg-blue-900 rounded-lg mt-5 mb-5">
-            <label htmlFor="tipologia-participante">Tipologia de participante</label>
-            <select name="tipologia-participante" id="tipologia-participante" required value="{tipoParticipante}" onChange={handleSelecaoTipoParticipante}>
+            <label htmlFor="tipologiaParticipante">Tipologia de participante</label>
+            <select name="tipologiaParticipante" id="tipologia-participante" required value={tipoParticipante} onChange={handleSelecaoTipoParticipante}>
               <option value=""></option>
               <option value="equipa">Equipa</option>
               <option value="individual" defaultValue="#dc2626">Individual</option>
@@ -59,19 +65,19 @@ export default function Page() {
             <div className="flex flex-col font-semibold text-amber-200 bg-blue-900 rounded-lg p-5 mb-5">
               
               <label htmlFor="nome-equipa">Nome da equipa</label>
-              <input type="text" name="nome-equipa"/>
+              <input type="text" name="nomeEquipa"/>
               <br />
 
               <label htmlFor="responsavel-equipa">Responsável pela equipa</label>
-              <input type="text" name="responsavel-equipa"/>
+              <input type="text" name="responsavelEquipa"/>
               <br />
 
               <label htmlFor="numero-elementos">Número de elementos da equipa</label>
-              <input type="text" name="numero-elementos"/>
+              <input type="text" name="numeroElementos"/>
               <br />
 
               <label htmlFor="genero-equipa">Género dos membros da equipa</label>
-              <select name="genero-equipa" id="genero-equipa">
+              <select name="generoEquipa" id="genero-equipa">
                 <option value=""></option>
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>
@@ -79,16 +85,16 @@ export default function Page() {
               <br />
 
               <label htmlFor="endereco-institucional">Endereço institucional</label>
-              <input type="text" name="endereco-institucional"/>
+              <input type="text" name="enderecoInstitucional"/>
               <br />
 
               <label htmlFor="contacto" className="flex flex-col items-center pt-3 pb-2">Contacto</label>
               <label htmlFor="telefone">Telefone</label>
-              <input type="number" name="telefone"/>
+              <input type="text" name="telefoneEquipa"/>
               <br />
 
               <label htmlFor="e-mail">E-mail</label>
-              <input type="text" name="e-mail"/>
+              <input type="text" name="emailEquipa"/>
               <br />
             </div>
           </div>
@@ -100,15 +106,15 @@ export default function Page() {
             <div className="flex flex-col font-semibold text-orange-500 bg-blue-900 rounded-lg p-5 mb-10">
 
               <label htmlFor="nome">Nome</label>
-              <input type="text" name="nome"/>
+              <input type="text" name="nomeIndividual"/>
               <br />
 
               <label htmlFor="idade">Idade</label>
-              <input type="text" name="idade"/>
+              <input type="text" name="idadeIndividual"/>
               <br />
 
               <label htmlFor="genero-individual">Género</label>
-              <select name="genero-individual" id="genero-individual">
+              <select name="generoIndividual" id="genero-individual">
                 <option value=""></option>
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>
@@ -120,7 +126,7 @@ export default function Page() {
               <br />
 
               <label htmlFor="codigo-postal">Código postal</label>
-              <input type="number" name="codigo-postal" />
+              <input type="text" name="codigoPostal" />
               <br />
 
               <label htmlFor="concelho">Concelho</label>
@@ -128,19 +134,19 @@ export default function Page() {
               <br />
 
               <label htmlFor="data-nascimento">Data de nascimento</label>
-              <input type="date" name="data-nascimento"/>
+              <input type="date" name="dataNascimento"/>
               <br />
 
               <label htmlFor="identificacao">Documento de identificação</label>
-              <input type="number" name="identificacao"/>
+              <input type="text" name="identificacao"/>
               <br />
 
               <label htmlFor="contacto" className="flex flex-col items-center pt-3 pb-2">Contacto</label>
               <label htmlFor="telefone">Telefone</label>
-              <input type="text" name="telefone"/>
+              <input type="text" name="telefoneIndividual"/>
               <br />
               <label htmlFor="e-mail">E-mail</label>
-              <input type="text" name="e-mail"/>
+              <input type="text" name="emailIndividual"/>
               <br />
 
               <p>Observações:</p>
@@ -153,7 +159,7 @@ export default function Page() {
               </div>
             
               <div>
-                <input type="checkbox" id="insuficiencia-cardiaca" name="insuficiencia-cardiaca" value="insuficiencia-cardiaca" />
+                <input type="checkbox" id="insuficiencia-cardiaca" name="insuficienciaCardiaca" value="insuficiencia-cardiaca" />
                 <label htmlFor="hipertensao">Insuficiência cardíaca</label>
               </div>
 
@@ -168,14 +174,14 @@ export default function Page() {
               </div>
 
               <div>
-                <input type="checkbox" id="insuficiencia-renal" name="insuficiencia-renal" value="insuficiencia-renal" />
+                <input type="checkbox" id="insuficiencia-renal" name="insuficienciaRenal" value="insuficiencia-renal" />
                 <label htmlFor="hipertensao">Insuficiência renal</label>
               </div>
               <br />
 
               <p>Se sofrer de outra patologia, indique qual</p>
               <label htmlFor="outra-patologia"></label>
-              <textarea name="outra-patologia" id="outra-patologia"></textarea>
+              <textarea name="outraPatologia" id="outra-patologia"></textarea>
               <br />
             </div>
           </div>

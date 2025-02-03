@@ -67,3 +67,11 @@ Exemplo:
 }`
 
 **Nota**: se uma determinada estilização não produzir efeitos, provavelmente há outra estilização pré-definida a sobrepôr-se. Nesse caso, utilizar a propriedade `!important`.
+
+## Interação com a base de dados
+
+### Conectar Next.js a MySQL
+
+1. Começar por verificar se está instalada a dependência necessária, mysql2, através do comando `pnpm list mysql2`. Se o resultado for '(empty)', seguir o próximo passo.
+
+2. Instalar a dependência mysql2 através do comando `pnpm install mysql2`.
