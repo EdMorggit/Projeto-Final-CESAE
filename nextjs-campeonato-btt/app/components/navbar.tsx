@@ -17,7 +17,8 @@ export default function Navbar() {
           <li><Link href="/calendario" className="hover:text-gray-300">Calendário</Link></li>
           <li><Link href="/provasfuturas" className="hover:text-gray-300">Provas Futuras</Link></li>
           <li><Link href="/regulamento" className="hover:text-gray-300">Regulamento</Link></li>
-          <li><Link href="/form-participante" className="hover:text-gray-300 font-bold">📝 Inscrições</Link></li>
+          <li><Link href="/form-participante2" className="hover:text-gray-300 font-bold">Participantes</Link></li>
+          <li><Link href="/form-organizador" className="hover:text-gray-300">Organizadores</Link></li>
           <li><Link href="/sobre" className="hover:text-gray-300">Sobre</Link></li>
           <li><Link href="/login" className="hover:text-gray-300">Login</Link></li>
           <li><Link href="/superadmin" className="hover:text-gray-300">Superadmin</Link></li>

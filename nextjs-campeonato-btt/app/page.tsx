@@ -15,13 +15,14 @@ export default function HomePage() {
 
       {/* Hero Section com vídeo do YouTube */}
       <section className="relative h-[400px] flex items-center justify-center">
-        <iframe
-          className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/cxabX70wnDE?autoplay=1&mute=1&loop=1&playlist=cxabX70wnDE&controls=0&modestbranding=1&rel=0"
-          title="Vídeo de BTT"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-        ></iframe>
+      <video
+  className="w-full h-[500px] object-cover rounded-lg shadow-md"
+  src="/btt-video2.mp4"
+  autoPlay
+  loop
+  muted
+  controls={false}
+/>
       </section>
 
       {/* Destaques */}
@@ -118,61 +119,63 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
-          {/* Coluna 1 - Sobre */}
-          <div>
-            <h3 className="text-lg font-bold mb-2">Sobre o Campeonato</h3>
-            <p className="text-sm">
-            Somos apaixonados pelo desafio, quebrando barreiras e realizando sempre o melhor possível junto com você. Promovemos as maiores competições de Portugal! Conheça nossas competições e faça parte deste grupo de apaixonados pelo desafio.
-            </p>
-          </div>
-          {/* Coluna 2 - Links Rápidos */}
-          <div>
-            <h3 className="text-lg font-bold mb-2">Links Rápidos</h3>
-            <ul className="text-sm space-y-1">
-              <li>
-                <a href="/calendario" className="hover:underline">
-                  Calendário
-                </a>
-              </li>
-              <li>
-                <a href="/provas" className="hover:underline">
-                  Provas Futuras
-                </a>
-              </li>
-              <li>
-                <a href="/regulamento" className="hover:underline">
-                  Regulamento
-                </a>
-              </li>
-              <li>
-                <a href="/inscricoes" className="hover:underline">
-                  Inscrições
-                </a>
-              </li>
-            </ul>
-          </div>
-          {/* Coluna 3 - Redes Sociais */}
-          <div>
-            <h3 className="text-lg font-bold mb-2">Nos Siga</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-blue-500">
-                Facebook
-              </a>
-              <a href="#" className="hover:text-blue-400">
-                Twitter
-              </a>
-              <a href="#" className="hover:text-pink-500">
-                Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="text-center text-sm text-gray-500 mt-6">
-          © {new Date().getFullYear()} Campeonato Nacional de BTT. Todos os direitos reservados.
-        </div>
-      </footer>
+<footer className="bg-gray-900 text-white py-8">
+  <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+    {/* Coluna 1 - Sobre */}
+    <div>
+      <h3 className="text-lg font-bold mb-2">Sobre o Campeonato</h3>
+      <p className="text-sm">
+        Somos apaixonados pelo desafio, quebrando barreiras e realizando sempre o melhor possível junto com você. 
+        Promovemos as maiores competições de Portugal! Conheça nossas competições e faça parte deste grupo de apaixonados pelo desafio.
+      </p>
+    </div>
+    {/* Coluna 2 - Links Rápidos */}
+    <div>
+      <h3 className="text-lg font-bold mb-2">Links Rápidos</h3>
+      <ul className="text-sm space-y-1">
+        <li>
+          <a href="/calendario" className="hover:underline">
+            Calendário
+          </a>
+        </li>
+        <li>
+          <a href="/provasfuturas" className="hover:underline">
+            Provas Futuras
+          </a>
+        </li>
+        <li>
+          <a href="/regulamento" className="hover:underline">
+            Regulamento
+          </a>
+        </li>
+        <li>
+          <a href="/login" className="hover:underline">
+            Inscrições
+          </a>
+        </li>
+      </ul>
+    </div>
+    {/* Coluna 3 - Redes Sociais */}
+    <div>
+      <h3 className="text-lg font-bold mb-2">Nos Siga</h3>
+      <div className="flex space-x-4">
+        <a href="#" className="hover:text-blue-500">
+          Facebook
+        </a>
+        <a href="#" className="hover:text-blue-400">
+          Twitter
+        </a>
+        <a href="#" className="hover:text-pink-500">
+          Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+  <div className="text-center text-sm text-gray-500 mt-6">
+    © {new Date().getFullYear()} Campeonato Nacional de BTT. Todos os direitos reservados.
+  </div>
+</footer>
+
     </div>
   );
 }
