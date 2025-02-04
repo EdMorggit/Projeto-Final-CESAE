@@ -21,7 +21,7 @@ export default function Navbar() {
           <li><Link href="/form-organizador" className="hover:text-gray-300">Organizadores</Link></li>
           <li><Link href="/sobre" className="hover:text-gray-300">Sobre</Link></li>
           <li><Link href="/login" className="hover:text-gray-300">Login</Link></li>
-          <li><Link href="/superadmin" className="hover:text-gray-300">Superadmin</Link></li>
+          
           
         </ul>
       </div>

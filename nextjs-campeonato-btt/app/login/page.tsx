@@ -13,7 +13,7 @@ export default function LoginPage() {
 
     // Simulação de autenticação com diferentes papéis (roles)
     const users = [
-      { email: 'participante@teste.com', password: '123456', role: 'participante', redirect: '/form-participante' },
+      { email: 'participante@teste.com', password: '123456', role: 'participante', redirect: '/form-participante2' },
       { email: 'organizador@teste.com', password: '123456', role: 'organizador', redirect: '/form-organizador' },
       { email: 'admin@teste.com', password: '123456', role: 'superadmin', redirect: '/superadmin' },
     ];

@@ -27,7 +27,7 @@ export default function HomePage() {
 
       {/* Destaques */}
       <section className="py-8">
-        <h2 className="text-3xl font-semibold text-center mb-6">Destaques</h2>
+        <h2 className="text-3xl font-semibold text-center mt-10 mb-6">Destaques</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {/* Próxima Prova */}
           <div className="relative bg-gray-200 rounded shadow-md overflow-hidden">
@@ -149,8 +149,13 @@ export default function HomePage() {
           </a>
         </li>
         <li>
-          <a href="/login" className="hover:underline">
-            Inscrições
+          <a href="/form-participante2" className="hover:underline">
+            Participantes
+          </a>
+        </li>
+        <li>
+          <a href="/form-organizador" className="hover:underline">
+            Organizadores
           </a>
         </li>
       </ul>
