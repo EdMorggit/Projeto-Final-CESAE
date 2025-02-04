@@ -29,6 +29,8 @@ export async function createParticipante(formDataParticipante : FormData) {
         epilepsia: formDataParticipante.get('epilepsia'),
         insuficienciaRenal: formDataParticipante.get('insuficienciaRenal'),
         outraPatologia: formDataParticipante.getAll('outraPatologia')
-
     }
+    
+    //await sql `
+    //INSERT INTO participante_equipa (nome_equipa, responsavel_equipa, numero_elementos_equipa, endereco_institucional, telefone_equipa, email_equipa, id_prova)`
 }

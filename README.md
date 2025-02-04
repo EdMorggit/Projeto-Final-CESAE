@@ -75,3 +75,5 @@ Exemplo:
 1. Começar por verificar se está instalada a dependência necessária, mysql2, através do comando `pnpm list mysql2`. Se o resultado for '(empty)', seguir o próximo passo.
 
 2. Instalar a dependência mysql2 através do comando `pnpm install mysql2`.
+
+3. A ligação à base de dados encontra-se em database.js e utiliza os valores definidos em root/.env.

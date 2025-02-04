@@ -1,4 +1,7 @@
 "use client";
+
+import { getDBConnection } from "../../../lib/database";
+
 export default function ProvaIndividual() {
     return (
       <div>

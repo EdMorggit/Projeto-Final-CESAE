@@ -1,7 +1,11 @@
 'use client'
 
 import { useState } from "react";
+
 import { createParticipante } from '@/app/lib/actions';
+import { formDataParticipante } from "../lib/definitions_btt";
+import { getDBConnection } from "../lib/database";
+
 
 export default function Page() {
 { /* */}
@@ -14,18 +18,47 @@ export default function Page() {
     marginTop: 50,
     padding: 0,
 };
-
+    
+    //const Form = () => {
     const[tipoParticipante, setTipoParticipante] = useState<'equipa' | 'individual'>();
 
     const handleSelecaoTipoParticipante = (event: React.ChangeEvent<HTMLSelectElement>) => {
       setTipoParticipante(event.target.value as 'equipa' | 'individual');
     };
     
+    /*
+      const [nomeEquipa, setNomeEquipa] = useState('');
+      const [responsavelEquipa, setResponsavelEquipa] = useState('');
+      const [numeroElementos, setNumeroElementos] = useState('');
+      const [idadeElementos, setIdadeElementos] = useState('');
+      const [generoEquipa, setGeneroEquipa] = useState('');
+      const [enderecoInstitucional, setEnderecoInstitucional] = useState('');
+      const [telefoneEquipa, setTelefoneEquipa] = useState('');
+      const [emailEquipa, setEmailEquipa] = useState('');
+
+      const [nomeIndividual, setNomeIndividual] = useState('');
+      const [generoIndividual, setGeneroIndividual] = useState('');
+      const [morada, setMorada] = useState('');
+      const [codigoPostal, setCodigoPostal] = useState('');
+      const [concelho, setConcelho] = useState('');
+      const [dataNascimento, setDataNascimento] = useState('');
+      const [identificacao, setIdentificacao] = useState('');
+      const [telefoneIndividual, setTelefoneIndividual] = useState('');
+      const [emailIndividual, setEmailIndividual] = useState('');
+      const [hipertensao, setHipertensao] = useState('');
+      const [insuficienciaCardiaca, setInsuficienciaCardiaca] = useState('');
+      const [asma, setAsma] = useState('');
+      const [epilepsia, setEpilepsia] = useState('');
+      const [insuficienciaRenal, setInsuficienciaRenal] = useState('');
+      const [outraPatologia, setOutraPatologia] = useState('');
+
+      const [isSubmitting, setIsSubmitting] = useState(false);
+      const [errorMessage, setErrorMessage] = useState('');
+*/
     const handleSubmit = (event: React.FormEvent) => {event.preventDefault();
-
+        //setIsSubmitting(true);
         console.log('Formulário submetido com a opção ', tipoParticipante)
-
-    }
+      };
     
     return (
     // Os elementos devem ser inseridos entre a tag main (AS).
@@ -36,7 +69,7 @@ export default function Page() {
           https://www.geeksforgeeks.org/how-to-align-form-elements-to-center-using-tailwind-css/ 
         */}
 
-        <form action={createParticipante} className="flex flex-col items-center" onSubmit={(event) =>
+        <form /*action={createParticipante}*/ className="flex flex-col items-center" onSubmit={(event) =>
           {
             event.preventDefault();
             handleSubmit(event);
@@ -96,6 +129,9 @@ export default function Page() {
               <label htmlFor="e-mail">E-mail</label>
               <input type="text" name="emailEquipa"/>
               <br />
+
+              <label htmlFor="prova">ID da prova</label>
+              <input type="text" name="idProva"/>
             </div>
           </div>
 
@@ -188,9 +224,72 @@ export default function Page() {
 
           {/*<input type="submit" value="Submeter"/>*/}
 
-          <button className="bg-indigo-500 hover:text-emerald-100 text-xl text-amber-200 font-bold py-2 px-4 my-10 rounded" onSubmit={handleSubmit}>Submeter</button>
+          <button className="bg-blue-900 hover:text-stone-200 text-xl text-amber-200 font-bold py-2 px-4 my-10 rounded" onSubmit={handleSubmit}>Submeter</button>
         </form>
       </div>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-8 mt-2">
+  <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+    {/* Coluna 1 - Sobre */}
+    <div>
+      <h3 className="text-lg font-bold mb-2">Sobre o Campeonato</h3>
+      <p className="text-sm">
+        Somos apaixonados pelo desafio, quebrando barreiras e realizando sempre o melhor possível junto com você. 
+        Promovemos as maiores competições de Portugal! Conheça nossas competições e faça parte deste grupo de apaixonados pelo desafio.
+      </p>
+    </div>
+    {/* Coluna 2 - Links Rápidos */}
+    <div>
+      <h3 className="text-lg font-bold mb-2">Links Rápidos</h3>
+      <ul className="text-sm space-y-1">
+        <li>
+          <a href="/calendario" className="hover:underline">
+            Calendário
+          </a>
+        </li>
+        <li>
+          <a href="/provasfuturas" className="hover:underline">
+            Provas Futuras
+          </a>
+        </li>
+        <li>
+          <a href="/regulamento" className="hover:underline">
+            Regulamento
+          </a>
+        </li>
+        <li>
+          <a href="/form-participante2" className="hover:underline">
+            Participantes
+          </a>
+        </li>
+        <li>
+          <a href="/form-organizador" className="hover:underline">
+            Organizadores
+          </a>
+        </li>
+      </ul>
+    </div>
+    {/* Coluna 3 - Redes Sociais */}
+    <div>
+      <h3 className="text-lg font-bold mb-2">Nos Siga</h3>
+      <div className="flex space-x-4">
+        <a href="#" className="hover:text-blue-500">
+          Facebook
+        </a>
+        <a href="#" className="hover:text-blue-400">
+          Twitter
+        </a>
+        <a href="#" className="hover:text-pink-500">
+          Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+  <div className="text-center text-sm text-gray-500 mt-6">
+    © {new Date().getFullYear()} Campeonato Nacional de BTT. Todos os direitos reservados.
+  </div>
+</footer>
     </main>
     );
-  }
+  //};
+}
