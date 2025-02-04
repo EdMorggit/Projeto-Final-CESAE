@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+
 export default function Calendario() {
   const eventos = [
     {
@@ -37,98 +41,60 @@ export default function Calendario() {
       <h1 className="text-4xl font-bold text-center mb-10">Calendário de Provas</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {eventos.map((evento, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
-          >
+          <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
             <div className="relative h-48 w-full">
-              <img
-                src={evento.imagem}
-                alt={evento.nome}
-                className="w-full h-full object-cover"
-              />
-              {/* Sobreposição para garantir legibilidade */}
+              <img src={evento.imagem} alt={evento.nome} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
             </div>
             <div className="p-4">
-              <h2 className="text-xl font-bold text-gray-800 mb-1">
-                {evento.nome}
-              </h2>
+              <h2 className="text-xl font-bold text-gray-800 mb-1">{evento.nome}</h2>
               <p className="text-gray-600">{evento.data}</p>
               <p className="text-gray-600">{evento.local}</p>
-              {/* Botão opcional para ver detalhes */}
-              <a
-                href="#"
-                className="inline-block mt-3 text-blue-600 hover:underline text-sm font-semibold"
-              >
-                Ver detalhes
-              </a>
+              
+              {/* Botão "Ver Detalhes" com link correto para Provas Futuras */}
+              <Link href={`/provasfuturas?prova=${encodeURIComponent(evento.nome)}`} passHref>
+                <span className="inline-block mt-3 text-blue-600 hover:underline text-sm font-semibold cursor-pointer">
+                  Ver detalhes
+                </span>
+              </Link>
             </div>
           </div>
         ))}
       </div>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 mt-10">
-  <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
-    {/* Coluna 1 - Sobre */}
-    <div>
-      <h3 className="text-lg font-bold mb-2">Sobre o Campeonato</h3>
-      <p className="text-sm">
-        Somos apaixonados pelo desafio, quebrando barreiras e realizando sempre o melhor possível junto com você. 
-        Promovemos as maiores competições de Portugal! Conheça nossas competições e faça parte deste grupo de apaixonados pelo desafio.
-      </p>
-    </div>
-    {/* Coluna 2 - Links Rápidos */}
-    <div>
-      <h3 className="text-lg font-bold mb-2">Links Rápidos</h3>
-      <ul className="text-sm space-y-1">
-        <li>
-          <a href="/calendario" className="hover:underline">
-            Calendário
-          </a>
-        </li>
-        <li>
-          <a href="/provasfuturas" className="hover:underline">
-            Provas Futuras
-          </a>
-        </li>
-        <li>
-          <a href="/regulamento" className="hover:underline">
-            Regulamento
-          </a>
-        </li>
-        <li>
-          <a href="/form-participante2" className="hover:underline">
-            Participantes
-          </a>
-        </li>
-        <li>
-          <a href="/form-organizador" className="hover:underline">
-            Organizadores
-          </a>
-        </li>
-      </ul>
-    </div>
-    {/* Coluna 3 - Redes Sociais */}
-    <div>
-      <h3 className="text-lg font-bold mb-2">Nos Siga</h3>
-      <div className="flex space-x-4">
-        <a href="#" className="hover:text-blue-500">
-          Facebook
-        </a>
-        <a href="#" className="hover:text-blue-400">
-          Twitter
-        </a>
-        <a href="#" className="hover:text-pink-500">
-          Instagram
-        </a>
-      </div>
-    </div>
-  </div>
-  <div className="text-center text-sm text-gray-500 mt-6">
-    © {new Date().getFullYear()} Campeonato Nacional de BTT. Todos os direitos reservados.
-  </div>
-</footer>
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+          <div>
+            <h3 className="text-lg font-bold mb-2">Sobre o Campeonato</h3>
+            <p className="text-sm">
+              Somos apaixonados pelo desafio, quebrando barreiras e realizando sempre o melhor possível junto com você.
+              Promovemos as maiores competições de Portugal! Conheça nossas competições e faça parte deste grupo de apaixonados pelo desafio.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold mb-2">Links Rápidos</h3>
+            <ul className="text-sm space-y-1">
+              <li><Link href="/calendario" className="hover:underline">Calendário</Link></li>
+              <li><Link href="/provasfuturas" className="hover:underline">Provas Futuras</Link></li>
+              <li><Link href="/regulamento" className="hover:underline">Regulamento</Link></li>
+              <li><Link href="/form-participante2" className="hover:underline">Participantes</Link></li>
+              <li><Link href="/form-organizador" className="hover:underline">Organizadores</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold mb-2">Nos Siga</h3>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-blue-500">Facebook</a>
+              <a href="#" className="hover:text-blue-400">Twitter</a>
+              <a href="#" className="hover:text-pink-500">Instagram</a>
+            </div>
+          </div>
+        </div>
+        <div className="text-center text-sm text-gray-500 mt-6">
+          © {new Date().getFullYear()} Campeonato Nacional de BTT. Todos os direitos reservados.
+        </div>
+      </footer>
     </div>
   );
 }

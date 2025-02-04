@@ -13,16 +13,16 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* Hero Section com vídeo do YouTube */}
+      {/* Hero Section com vídeo local (MP4) */}
       <section className="relative h-[400px] flex items-center justify-center">
-      <video
-  className="w-full h-[500px] object-cover rounded-lg shadow-md"
-  src="/btt-video2.mp4"
-  autoPlay
-  loop
-  muted
-  controls={false}
-/>
+        <video
+          className="w-full h-[500px] object-cover rounded-lg shadow-md"
+          src="/btt-video2.mp4"
+          autoPlay
+          loop
+          muted
+          controls={false}
+        />
       </section>
 
       {/* Destaques */}
@@ -55,132 +55,84 @@ export default function HomePage() {
       <section className="py-8 bg-gray-100">
         <h2 className="text-3xl font-semibold text-center mb-6">Provas Futuras</h2>
         <div className="overflow-x-auto whitespace-nowrap flex space-x-6 px-6 scrollbar-hide">
-          {/* Prova 1 */}
-          <div className="relative w-72 h-48 flex-shrink-0 rounded-lg shadow-lg overflow-hidden">
-            <img
-              src="/montanhasmagicasbtt.jpg"
-              alt="Montanhas Mágicas BTT"
-              className="w-full h-full object-cover"
+          {/* Lista de Provas */}
+          {[
+            { nome: "Montanhas Mágicas BTT", data: "15 de Junho de 2025", imagem: "/montanhasmagicasbtt.jpg" },
+            { nome: "Rota do Corredor de Mouros", data: "22 de Julho de 2025", imagem: "/rota-corredor-mouros.jpg" },
+            { nome: "Planalto do Escarpão", data: "10 de Agosto de 2025", imagem: "/planalto-escarpao.jpg" },
+            { nome: "Maratona BTT de Albufeira", data: "5 de Setembro de 2025", imagem: "/maratona-btt-albufeira.jpg" },
+            { nome: "Desafio BTT Sortelha", data: "18 de Outubro de 2025", imagem: "/desafio-btt-sortelha.jpg" },
+          ].map((prova, index) => (
+            <a key={index} href="/provasfuturas" className="relative w-72 h-48 flex-shrink-0 rounded-lg shadow-lg overflow-hidden">
+              <img src={prova.imagem} alt={prova.nome} className="w-full h-full object-cover" />
+              <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-center w-full py-2">
+                <p className="text-sm font-semibold">{prova.nome}</p>
+                <p className="text-xs">{prova.data}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Seção de Patrocinadores */}
+      <section className="bg-gray-100 py-8">
+        <h2 className="text-3xl font-semibold text-center mb-6">Patrocinadores</h2>
+        <div className="container mx-auto flex flex-wrap justify-center items-center gap-6 px-6">
+          {/* Logo 1 */}
+          <div className="flex justify-center">
+            <img 
+              src="/patrocinador1.png" 
+              alt="Patrocinador 1" 
+              className="h-24 md:h-32 object-contain"
             />
-            <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-center w-full py-2">
-              <p className="text-sm font-semibold">Montanhas Mágicas BTT</p>
-              <p className="text-xs">15 de Junho de 2025</p>
-            </div>
           </div>
-          {/* Prova 2 */}
-          <div className="relative w-72 h-48 flex-shrink-0 rounded-lg shadow-lg overflow-hidden">
-            <img
-              src="/rota-corredor-mouros.jpg"
-              alt="Rota do Corredor de Mouros"
-              className="w-full h-full object-cover"
+          {/* Logo 2 */}
+          <div className="flex justify-center">
+            <img 
+              src="/patrocinador2.png" 
+              alt="Patrocinador 2" 
+              className="h-24 md:h-32 object-contain"
             />
-            <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-center w-full py-2">
-              <p className="text-sm font-semibold">Rota do Corredor de Mouros</p>
-              <p className="text-xs">22 de Julho de 2025</p>
-            </div>
-          </div>
-          {/* Prova 3 */}
-          <div className="relative w-72 h-48 flex-shrink-0 rounded-lg shadow-lg overflow-hidden">
-            <img
-              src="/planalto-escarpao.jpg"
-              alt="Planalto do Escarpão"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-center w-full py-2">
-              <p className="text-sm font-semibold">Planalto do Escarpão</p>
-              <p className="text-xs">10 de Agosto de 2025</p>
-            </div>
-          </div>
-          {/* Prova 4 - Maratona BTT de Albufeira */}
-          <div className="relative w-72 h-48 flex-shrink-0 rounded-lg shadow-lg overflow-hidden">
-            <img
-              src="/maratona-btt-albufeira.jpg"
-              alt="Maratona BTT de Albufeira"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-center w-full py-2">
-              <p className="text-sm font-semibold">Maratona BTT de Albufeira</p>
-              <p className="text-xs">5 de Setembro de 2025</p>
-            </div>
-          </div>
-          {/* Prova 5 - Desafio BTT Sortelha */}
-          <div className="relative w-72 h-48 flex-shrink-0 rounded-lg shadow-lg overflow-hidden">
-            <img
-              src="/desafio-btt-sortelha.jpg"
-              alt="Desafio BTT Sortelha"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-center w-full py-2">
-              <p className="text-sm font-semibold">Desafio BTT Sortelha</p>
-              <p className="text-xs">18 de Outubro de 2025</p>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-<footer className="bg-gray-900 text-white py-8">
-  <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
-    {/* Coluna 1 - Sobre */}
-    <div>
-      <h3 className="text-lg font-bold mb-2">Sobre o Campeonato</h3>
-      <p className="text-sm">
-        Somos apaixonados pelo desafio, quebrando barreiras e realizando sempre o melhor possível junto com você. 
-        Promovemos as maiores competições de Portugal! Conheça nossas competições e faça parte deste grupo de apaixonados pelo desafio.
-      </p>
-    </div>
-    {/* Coluna 2 - Links Rápidos */}
-    <div>
-      <h3 className="text-lg font-bold mb-2">Links Rápidos</h3>
-      <ul className="text-sm space-y-1">
-        <li>
-          <a href="/calendario" className="hover:underline">
-            Calendário
-          </a>
-        </li>
-        <li>
-          <a href="/provasfuturas" className="hover:underline">
-            Provas Futuras
-          </a>
-        </li>
-        <li>
-          <a href="/regulamento" className="hover:underline">
-            Regulamento
-          </a>
-        </li>
-        <li>
-          <a href="/form-participante2" className="hover:underline">
-            Participantes
-          </a>
-        </li>
-        <li>
-          <a href="/form-organizador" className="hover:underline">
-            Organizadores
-          </a>
-        </li>
-      </ul>
-    </div>
-    {/* Coluna 3 - Redes Sociais */}
-    <div>
-      <h3 className="text-lg font-bold mb-2">Nos Siga</h3>
-      <div className="flex space-x-4">
-        <a href="#" className="hover:text-blue-500">
-          Facebook
-        </a>
-        <a href="#" className="hover:text-blue-400">
-          Twitter
-        </a>
-        <a href="#" className="hover:text-pink-500">
-          Instagram
-        </a>
-      </div>
-    </div>
-  </div>
-  <div className="text-center text-sm text-gray-500 mt-6">
-    © {new Date().getFullYear()} Campeonato Nacional de BTT. Todos os direitos reservados.
-  </div>
-</footer>
-
+      <footer className="bg-gray-900 text-white py-8">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+          {/* Coluna 1 - Sobre */}
+          <div>
+            <h3 className="text-lg font-bold mb-2">Sobre o Campeonato</h3>
+            <p className="text-sm">
+              Somos apaixonados pelo desafio, quebrando barreiras e realizando sempre o melhor possível junto com você. 
+              Promovemos as maiores competições de Portugal! Conheça nossas competições e faça parte deste grupo de apaixonados pelo desafio.
+            </p>
+          </div>
+          {/* Coluna 2 - Links Rápidos */}
+          <div>
+            <h3 className="text-lg font-bold mb-2">Links Rápidos</h3>
+            <ul className="text-sm space-y-1">
+              <li><a href="/calendario" className="hover:underline">Calendário</a></li>
+              <li><a href="/provasfuturas" className="hover:underline">Provas Futuras</a></li>
+              <li><a href="/regulamento" className="hover:underline">Regulamento</a></li>
+              <li><a href="/form-participante2" className="hover:underline">Participantes</a></li>
+              <li><a href="/form-organizador" className="hover:underline">Organizadores</a></li>
+            </ul>
+          </div>
+          {/* Coluna 3 - Redes Sociais */}
+          <div>
+            <h3 className="text-lg font-bold mb-2">Nos Siga</h3>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-blue-500">Facebook</a>
+              <a href="#" className="hover:text-blue-400">Twitter</a>
+              <a href="#" className="hover:text-pink-500">Instagram</a>
+            </div>
+          </div>
+        </div>
+        <div className="text-center text-sm text-gray-500 mt-6">
+          © {new Date().getFullYear()} Campeonato Nacional de BTT. Todos os direitos reservados.
+        </div>
+      </footer>
     </div>
   );
 }
